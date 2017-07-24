@@ -21,7 +21,7 @@ CE(\mathbf{y,\hat{y}})=-\log{(\hat{y}_{k})}=-\log{(softmax({\theta}_{k}))}=-\log
 $$
 so
 $$
-\frac{\partial CE}{\partial {\theta}_{j}}={\hat{y}_{k}}^{-1}\frac{{e}^{{\theta}_{k}}{e}^{{\theta}_{j}}}{{(\sum_{i}{e}^{{\theta}_{i}})}^{2}}={\hat{y}_{k}}^{-1}{\hat{y}_{k}}{\hat {y}_{j}}={y}_{j}(j\neq k)
+\frac{\partial CE}{\partial {\theta}_{j}}={\hat{y}_{k}}^{-1}\frac{{e}^{{\theta}_{k}}{e}^{{\theta}_{j}}}{{(\sum_{i}{e}^{{\theta}_{i}})}^{2}}={\hat{y}_{k}}^{-1}{\hat{y}_{k}}{\hat {y}_{j}}=\hat{y}_{j}(j\neq k)
 $$
 $$
 \frac{\partial CE}{\partial {\theta}_{k}}={\hat{y}_{k}}^{-1}(\frac{{e}^{{\theta}_{k}}{e}^{{\theta}_{k}}}{{(\sum_{i}{e}^{{\theta}_{i}})}^{2}}-\frac{{e}^{{\theta}_{k}}}{\sum_{i}{e}^{{\theta}_{i}}})={\hat{y}_{k}}^{-1}({\hat{y}_{k}}^{2}-{\hat{y}_{k}})={\hat{y}_{k}}-1
