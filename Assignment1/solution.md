@@ -7,3 +7,22 @@ so
 $$
 softmax{(\mathbf{x}+c)}=softmax{(\mathbf{x})}
 $$
+
+# 2 Neural Network Basics
+(a)
+$$
+{\sigma}'(x)=-\frac{1}{{({1+{e}^{-x}})}^{2}}\cdot{({e}^{-x})}'=-\frac{-{e}^{-x}}{(1+{e}^{-x})^{2}}=\frac{1}{1+{e}^{-x}}\cdot\frac{{e}^{-x}}{1+{e}^{-x}}=\sigma(x)(1-\sigma(x))
+$$
+
+(b)
+Assume ${y}_{k}=1$, then
+$$
+CE(\mathbf{y,\hat{y}})=-\log{(\hat{y}_{k})}=-\log{(softmax({\theta}_{k}))}=-\log\frac{{e}^{{\theta}_{k}}}{\sum_{i}{e}^{{\theta}_{i}}}
+$$
+so
+$$
+\frac{\partial CE}{\partial {\theta}_{j}}={\hat{y}_{k}}^{-1}\frac{{e}^{{\theta}_{k}}{e}^{{\theta}_{j}}}{{(\sum_{i}{e}^{{\theta}_{i}})}^{2}}={\hat{y}_{k}}^{-1}{\hat{y}_{k}}{\hat {y}_{j}}={y}_{j}(j\neq k)
+$$
+$$
+\frac{\partial CE}{\partial {\theta}_{k}}={\hat{y}_{k}}^{-1}(\frac{{e}^{{\theta}_{k}}{e}^{{\theta}_{k}}}{{(\sum_{i}{e}^{{\theta}_{i}})}^{2}}-\frac{{e}^{{\theta}_{k}}}{\sum_{i}{e}^{{\theta}_{i}}})={\hat{y}_{k}}^{-1}({\hat{y}_{k}}^{2}-{\hat{y}_{k}})={\hat{y}_{k}}-1
+$$
